@@ -13,7 +13,7 @@ const Banner = () => {
             </div>
             <div className="mt-2">
               <h1 className="text-5xl font-bold text-white">
-                Elevate Your Productivity with <span className="text-[#337cdc]">TaskSync</span>
+                Elevate Your Productivity with <span className="text-[#398fff]">TaskSync</span>
               </h1>
               <p className="py-6 text-[#d3dce6]">Boost your productivity, stay on top of deadlines, and achieve your goals efficiently.</p>
               <PrimaryBtn>Let&apos;s Explore</PrimaryBtn>
