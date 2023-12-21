@@ -4,8 +4,9 @@ import HeadRoom from "react-headroom";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
+import useAuth from "../../../hooks/useAuth";
 const Navbar = () => {
-  // const email = user.email;
+  const { logoutUser, user } = useAuth();
   const link = (
     <>
       <div className="flex flex-col gap-4 lg:flex-row lg:gap-12 font-medium ">
@@ -23,20 +24,24 @@ const Navbar = () => {
             Home
           </NavLink>
         </div>
-        <div className="nav-item">
-          <NavLink
-            to="/dashboard"
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? "cursor-pointer font-semibold text-lg border-b-4 border-b-[#337cdc] pb-1"
-                : "cursor-pointer font-semibold text-lg hover:border-b-4 hover:border-b-[#337cdc] pb-1"
-            }
-          >
-            Dashboard
-          </NavLink>
-        </div>
+        {user ? (
+          <div className="nav-item">
+            <NavLink
+              to="/dashboard"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "cursor-pointer font-semibold text-lg border-b-4 border-b-[#337cdc] pb-1"
+                  : "cursor-pointer font-semibold text-lg hover:border-b-4 hover:border-b-[#337cdc] pb-1"
+              }
+            >
+              Dashboard
+            </NavLink>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="nav-item">
           <NavLink
             to="/contact"
@@ -159,23 +164,26 @@ const Navbar = () => {
             <div className="hidden lg:flex">
               <ul className="menu menu-horizontal px-1 text-white">{link}</ul>
             </div>
-            {/* {user ? (
+            {user ? (
               <div className="dropdown dropdown-end z-50 ml-5">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-14 rounded-full border-2 border-[#FBB04B]">
+                  <div className="w-14 rounded-full border-2 border-[#2F75D0]">
                     <img src={user?.photoURL} />
                   </div>
                 </label>
-                <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                <ul
+                  tabIndex={0}
+                  className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-[#0A3D53] rounded-box w-52 text-white border border-[#2F75D0]"
+                >
                   <li>
                     <a className="text-xl font-semibold mb-0">{user?.displayName}</a>
                   </li>
                   <li>
-                    <a className="text-gray-700 mt-0">{user?.email}</a>
+                    <a className="mt-0">{user?.email}</a>
                   </li>
                   <li>
                     <Link to={"/"}>
-                      <button onClick={handleSignOut} className="text-[#FF6A25] text-lg font-medium">
+                      <button onClick={logoutUser} className="text-[#2F75D0] text-lg font-medium">
                         Logout
                       </button>
                     </Link>
@@ -184,16 +192,16 @@ const Navbar = () => {
               </div>
             ) : (
               ""
-            )} */}
+            )}
 
             <div className="ml-10">
-              {/* {user ? (
+              {user ? (
                 ""
-              ) : ( */}
-              <PrimaryBtn>
-                <Link to={"/login"}>Login</Link>
-              </PrimaryBtn>
-              {/* )} */}
+              ) : (
+                <PrimaryBtn>
+                  <Link to={"/login"}>Login</Link>
+                </PrimaryBtn>
+              )}
             </div>
           </div>
         </div>
