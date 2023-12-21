@@ -2,8 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   return (
-    <div>
-      <h2>Main</h2>
+    <div className="font-roboto">
       <Outlet />
     </div>
   );
