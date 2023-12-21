@@ -39,7 +39,7 @@ const Register = () => {
 
       toast.success("User signup successfully");
       reset();
-      navigate("/");
+      navigate("/dashboard/my-task");
     } catch (err) {
       toast.error(err.message);
     }
@@ -64,7 +64,7 @@ const Register = () => {
       // await axiosPublic.post(`/users`, currentUser);
 
       toast.success("User signup successfully");
-      navigate("/");
+      navigate("/dashboard/my-task");
     } catch (err) {
       console.log(err);
       toast.error(err.message);
@@ -77,7 +77,7 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-[#E3DEFC] py-12 font-roboto ">
       <Toaster></Toaster>
-      <div className="w-11/12  md:10/12 lg:w-4/12  text-[#1B2850] bg-base-100 rounded-lg mx-auto" style={shadow}>
+      <div className="w-11/12  md:10/12 lg:w-4/12  text-[#0A3D53] bg-base-100 rounded-lg mx-auto" style={shadow}>
         <div className="text-center mb-3 ">
           <div className=" bg-[#0A3D53] py-7 flex justify-center rounded-t-lg">
             <Logo />

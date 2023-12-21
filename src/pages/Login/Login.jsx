@@ -25,7 +25,7 @@ const Login = () => {
 
       toast.success("User signin successfully");
       reset();
-      navigate(location?.state ? location.state : "/");
+      navigate(location?.state ? location.state : "/dashboard/my-task");
     } catch (err) {
       toast.error(err.message);
     }
@@ -53,7 +53,7 @@ const Login = () => {
       //   await getToken(result?.user?.email);
       toast.success("User signin successfully");
 
-      navigate(location?.state ? location.state : "/");
+      navigate(location?.state ? location.state : "/dashboard/my-task");
     } catch (err) {
       console.log(err);
       toast.error(err.message);

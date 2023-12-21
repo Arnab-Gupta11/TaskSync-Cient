@@ -2,8 +2,11 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Logo from "../../../components/Shared/Logo/Logo";
+import { useState } from "react";
+import { RxCross1 } from "react-icons/rx";
 const DashboardSidebarNav = () => {
   const { user, logoutUser } = useAuth();
+  const [toggle, setToggle] = useState(false);
   return (
     <div>
       <div className="bg-[#0A3D53] shadow-sm  shadow-[#70aeff] w-full flex justify-between items-center gap-7  py-4 md:pr-10 z-50">
@@ -17,9 +20,19 @@ const DashboardSidebarNav = () => {
         </div>
         {user ? (
           <details className="dropdown">
-            <summary className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full border-2 border-[#2F75D0]">
-                <img src={user?.photoURL} />
+            <summary
+              className={
+                toggle ? "btn bg-transparent border-none hover:bg-[#0A3D53] hover:scale-x-125 btn-circle" : "btn btn-ghost btn-circle avatar"
+              }
+            >
+              <div className={toggle ? "w-10" : "w-10 rounded-full border-2 border-[#2F75D0]"} onClick={() => setToggle(!toggle)}>
+                {toggle ? (
+                  <div className="text-[#2F75D0] text-3xl ml-1.5 font-bold">
+                    <RxCross1 />
+                  </div>
+                ) : (
+                  <img src={user?.photoURL} />
+                )}
               </div>
             </summary>
 

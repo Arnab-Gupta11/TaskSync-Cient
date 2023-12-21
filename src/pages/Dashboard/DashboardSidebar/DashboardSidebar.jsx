@@ -22,11 +22,11 @@ const DashboardSidebar = () => {
           <>
             <div>
               <NavLink
-                to="/dashboard/manage-product"
+                to="/dashboard/my-task"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#70aeff] bg-[#1B2850] pr-28 pl-5 py-2.5 rounded-md  font-medium flex items-center gap-2"
-                    : "text-white  pr-28 pl-5 py-2.5 rounded-md  font-medium flex items-center gap-2"
+                    ? "text-[#70aeff] pl-5 pt-2  rounded-md  font-medium flex items-center gap-2"
+                    : "text-white pl-5 pt-2   rounded-md  font-medium flex items-center gap-2"
                 }
               >
                 <span>
@@ -40,8 +40,8 @@ const DashboardSidebar = () => {
                 to="/dashboard/sales-collection"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#70aeff] bg-[#1B2850] pr-28 pl-5 py-2.5 rounded-md  font-medium flex items-center gap-2"
-                    : "text-white  pr-28 pl-5 py-2.5 rounded-md  font-medium flex items-center gap-2"
+                    ? "text-[#70aeff] pt-2 pl-5  rounded-md  font-medium flex items-center gap-2"
+                    : "text-white pt-2   pl-5 rounded-md  font-medium flex items-center gap-2"
                 }
               >
                 <span>

@@ -27,7 +27,7 @@ const Navbar = () => {
         {user ? (
           <div className="nav-item">
             <NavLink
-              to="/dashboard"
+              to="/dashboard/my-task"
               className={({ isActive, isPending }) =>
                 isPending
                   ? "pending"

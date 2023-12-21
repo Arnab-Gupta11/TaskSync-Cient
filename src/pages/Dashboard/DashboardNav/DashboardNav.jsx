@@ -1,6 +1,5 @@
 import { IoHome } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { PiVideoFill } from "react-icons/pi";
 
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
