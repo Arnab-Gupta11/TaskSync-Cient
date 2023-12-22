@@ -17,7 +17,7 @@ const Review = () => {
             <h4 className="text-[#398fff] text-4xl font-semibold mb-3">Target Audience</h4>
             <h2 className="text-lg font-medium text-[#1A2D62] mb-4">Discover how different types of users can benefit from our website</h2>
           </div>
-          <div className="">
+          <div className="z-0">
             <Marquee pauseOnHover="ture">
               {reviews?.map((review) => (
                 <ReviewCard key={review._id} reviewCard={review}></ReviewCard>

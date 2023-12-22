@@ -136,11 +136,11 @@ const Navbar = () => {
     <HeadRoom>
       <div
         className={
-          navbar ? "w-full   fixed bg-[#0A3D53] transition-colors  z-10 text-white shadow-xl" : "w-full   fixed  z-10 text-white transition-colors"
+          navbar ? "w-full   fixed bg-[#0A3D53] transition-colors  z-50 text-white shadow-xl" : "w-full   fixed  z-10 text-white transition-colors"
         }
       >
         <div className="navbar max-w-screen-xl mx-auto font-sans">
-          <div className="navbar-start">
+          <div className="navbar-start z-50">
             <div className="dropdown ">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
