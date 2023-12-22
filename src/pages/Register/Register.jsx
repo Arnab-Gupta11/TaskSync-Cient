@@ -24,7 +24,8 @@ const Register = () => {
       //1.upload image
       const imageData = await imageUpload(image);
       // 2.user registration
-      await registerUser(data.email, data.password);
+      const result = await registerUser(data.email, data.password);
+      console.log("🚀 ~ file: Register.jsx:28 ~ onSubmit ~ result:", result);
 
       //3.Update user profile
       await updateUserProfile(data.name, imageData?.data?.display_url);
