@@ -86,7 +86,7 @@ const Login = () => {
                 type="email"
                 placeholder="email"
                 name="email"
-                className="px-4 py-3 rounded-lg bg-[#efedff] outline-[#9fa0a3]  mb-4"
+                className="px-4 py-3 rounded-lg border outline-[#9fa0a3]  mb-4"
                 {...register("email", { required: true })}
               />
               {errors.email && <span className="text-red-700 text-xs font-medium mt-0 mb-3 ml-1">Email is required</span>}
@@ -98,7 +98,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="px-4 py-3 w-full rounded-lg bg-[#efedff] outline-[#9fa0a3]  bg-transparent mb-4 border"
+                  className="px-4 py-3 w-full rounded-lg  outline-[#9fa0a3]  bg-transparent mb-4 border"
                   {...register("password", {
                     required: true,
                     pattern: /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{6,}$/,

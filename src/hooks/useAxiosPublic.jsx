@@ -1,8 +1,6 @@
 import axios from "axios";
-//https://inventohub.vercel.app
-//https://inventohub.vercel.app
 const axiosPublic = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://task-sync-six.vercel.app",
 });
 
 const useAxiosPublic = () => {

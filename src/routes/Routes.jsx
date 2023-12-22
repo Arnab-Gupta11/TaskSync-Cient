@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Dashboard from "../layout/Dashboard/Dashboard";
 import MyTask from "../pages/Dashboard/MyTask/MyTask";
+import UpdateTask from "../pages/Dashboard/MyTask/updateTask";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "my-task",
         element: <MyTask />,
+      },
+      {
+        path: "my-task/:id",
+        element: <UpdateTask></UpdateTask>,
+        loader: ({ params }) => fetch(`https://task-sync-six.vercel.app/tasks/id/${params.id}`),
       },
     ],
   },
